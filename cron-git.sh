@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
-# cron with 1 minute
+# cron with 2 minute
 
-git pull
+cd ~/home/algoresume/algoresume-server/
+/usr/bin/git pull
