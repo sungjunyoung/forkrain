@@ -2,6 +2,10 @@ var express = require('express');
 var app = express();
 var router = express.Router();
 
-console.log("create urls.js");
+/* GET urls listing. */
+router.get('/', function(req, res, next) {
+    res.send('urls view');
+});
+
 
 module.exports = router;
