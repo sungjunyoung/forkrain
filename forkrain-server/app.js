@@ -32,6 +32,14 @@ app.use('/apis', apis);
 app.use('/users', users);
 app.use('/auth', auth);
 
+/*reference for db*/
+var ref_db = require('./routes/ref-db');
+app.use('/ref-db', ref_db);
+/*reference page for API*/
+var ref_page = require('./routes/ref-page');
+app.use('/ref-page', ref_page);
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

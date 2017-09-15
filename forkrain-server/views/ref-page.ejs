@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <button class="insert" name="button">Insert ME</button>
+    <button class="delete" name="button">Remove ME</button>
+  </body>
+</html>
+
+<script>
+  document.querySelector('.insert').addEventListener('click', function(){
+    sendAjax('apis/insert','POST');
+  });
+  document.querySelector('.delete').addEventListener('click', function(){
+    sendAjax('apis/delete','DELETE');
+  });
+</script>
+
+<script>
+  function sendAjax(url,state){
+    var xhr = new XMLHttpRequest();
+    xhr.open(state, url);
+    xhr.setRequestHeader('Content-type', "application/json");
+    xhr.send(null);
+
+    xhr.addEventListener('load', function(){
+      console.log(xhr.responseText);
+    });
+  }
+</script>
