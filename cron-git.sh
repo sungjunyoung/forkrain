@@ -2,5 +2,5 @@
 
 # cron with 2 minute
 
-cd /home/ubuntu/algoresume/algoresume-server/
+cd /home/ubuntu/forkrain/forkrain-server/
 /usr/bin/git pull
