@@ -2,5 +2,5 @@
 
 # cron with 2 minute
 
-cd /home/algoresume/algoresume-server/
+cd /algoresume/algoresume-server/
 /usr/bin/git pull
