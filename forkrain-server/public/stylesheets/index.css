@@ -101,13 +101,12 @@ body {
     background-size: cover;
     float: left;
     height: 20vh;
-    width: 40vw;
+    width: 30vw;
     border: 1px black solid;
-    margin-right: 5px;
+    margin-right: 15px;
 }
 
 .title {
-    float: left;
     font-weight: 600;
     font-size: 14px;
     margin: 4px 4px 4px 4px;
@@ -120,7 +119,7 @@ body {
 
 .url {
     font-size: 12px;
-    float : left;
+
 }
 
 .section_contents {
