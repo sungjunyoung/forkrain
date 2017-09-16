@@ -13,10 +13,13 @@ router.get('/', function (req, res, next) {
     var totalLine = articleArray.length;
     var isLogin = false;
     var userId = '';
+    var avatarUrl = '';
     if(req.user){
         isLogin = true;
-        console.log(req.user.username);
         userId = req.user.username;
+        avatarUrl = req.user._json.avatar_url;
+        // console.log(req.user);
+        // console.log(req.user._json.avatar_url);
     }
 
     articleArray.forEach(function (str) {
@@ -57,7 +60,7 @@ router.get('/', function (req, res, next) {
                         articles[i].image = imageUrl;
 
                         if (counter === totalLine - 1) {
-                            res.render('index', {data: articles, isLogin: isLogin, userId: userId});
+                            res.render('index', {data: articles, isLogin: isLogin, userId: userId, avatarUrl: avatarUrl});
                         }
                     });
 

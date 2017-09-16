@@ -41,7 +41,9 @@
         <i id="search_button" class="material-icons">search</i>
     </div>
     <% if(isLogin) { %>
-        <a id="right_top_btn" href="/users/<%= userId %>">MYPAGE</a>
+        <a id="right_top_mypage_btn" href="/users/<%= userId %>">
+            <img id="ctl00_XXX" src="<%= avatarUrl %>" style="border: 0; max-width:100%; max-height:100%;" />
+        </a>
     <% } else { %>
         <a id="right_top_btn" data-toggle="modal" data-target="#myModal">LOGIN</a>
     <% } %>

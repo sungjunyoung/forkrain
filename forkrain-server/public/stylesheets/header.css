@@ -72,3 +72,14 @@
     color: #d2d2d2;
     /*background-color: black;*/
 }
+
+#right_top_mypage_btn{
+    float: right;
+    width: 40px;
+    height: 40px;
+    /*background-color: black;*/
+    background-color: transparent;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
