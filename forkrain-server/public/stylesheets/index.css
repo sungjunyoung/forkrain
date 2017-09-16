@@ -90,9 +90,24 @@ body {
 }
 
 .card {
-    height: 22vh;
+    height: 23vh;
     padding: 10px 20px 10px 20px;
     border-bottom: 1px solid #333333;
+}
+
+.image_wrapper{
+    /*display: inline-block;*/
+    height: 0;
+}
+
+.over_image {
+
+    position: relative;
+    top: 15vh;
+    height: 5vh;
+    width: 30vw;
+    background-color: black;
+    opacity: 0.9;
 }
 
 .url_image {
@@ -106,14 +121,24 @@ body {
     margin-right: 15px;
 }
 
+.sec_title {
+    color : white;
+    font-size: 12px;
+    position: relative;
+    top: -19vh;
+    text-align: left;
+    margin-left: 10px;
+}
+
 .title {
     font-weight: 600;
     font-size: 14px;
-    margin: 4px 4px 4px 4px;
+    margin: 4px 4px 10px 4px;
 }
 
 .contents {
     font-size: 12px;
+    margin-bottom: 10px;
     font-weight: 300;
 }
 
@@ -123,7 +148,7 @@ body {
 }
 
 .section_contents {
-    margin-top: 18vh;
+    margin-top: 10vh;
 }
 a {
     color: #00B7FF;

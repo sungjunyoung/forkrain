@@ -62,11 +62,12 @@
             <div class="card">
                 <div class="image_wrapper">
                     <div class="url_image" style="background: url('<%= data[key].image %>')"></div>
+                    <div class="over_image">
+                        <div class="sec_title"><%= data[key].title %></div>
+                    </div>
                 </div>
                 <div class="title"><%= data[key].title %></div>
-                <br/>
-                <div class="contents"><%= data[key].contents.substr(0, 100) %></div>
-                <br/>
+                <div class="contents"><%= data[key].contents.substr(0, 80) %>...</div>
                 <div class="url"><b>URL : </b> <%= data[key].url %></div>
             </div>
             <% i++ %>
