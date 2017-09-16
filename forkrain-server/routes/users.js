@@ -12,12 +12,14 @@ router.get('/:users_id', function (req, res, next) {
   var user_id = req.params.users_id;
   var length;
   var boardNo = [];
-  // var text = fs.readFileSync('please-edit-me.txt','utf8');
-  // var articleArray = text.split(/\n+/);
-  // var articles = [];
-  // var lineCount = 0;
+
+  var text = fs.readFileSync('please-edit-me.txt','utf8');
+  var articleArray = text.split(/\n+/);
+  var articles = [];
+  var lineCount = 0;
+  var totalLine = articleArray.length;
+
   // var matchingList = [];
-  // var totalLine = articleArray.length;
   // var idx=[];
   //
 
@@ -29,34 +31,24 @@ router.get('/:users_id', function (req, res, next) {
       length = docs.length;
       for(var i=0; i<length; i++) boardNo.push(docs[i].idx);
     }
-
-    console.log(boardNo);
-    // length = docs.length;
-    // docs.forEach(function (str) {
-    //   console.log(str);
-    // })
-    // console.log(length+"+"+JSON.stringify(docs.user_id));
-    // for(var i=0; i<length; i++) console.log(docs[i].user_id);
   })
+
+  /*STEP 1 : listing the articles into formatted JSON*/
+  articleArray.forEach(function(str) {
+    if(str) {
+      var data = str.split(/\s+/);
+      var tags = [];
+      i=3;
+      while(data[i]) {
+        tags.push(data[i]);
+        i++;
+      }
+      articles.push({'idx':data[0], 'user_id':data[1], 'url':data[2], 'tags':tags});
+    }
+  });
 
   res.send("test");
 
-  //res.send("end");
-  //
-
-  // /*STEP 1 : listing the articles into formatted JSON*/
-  // articleArray.forEach(function(str) {
-  //   if(str) {
-  //     var data = str.split(/\s+/);
-  //     var tags = [];
-  //     i=3;
-  //     while(data[i]) {
-  //       tags.push(data[i]);
-  //       i++;
-  //     }
-  //     articles.push({'idx':data[0], 'user_id':data[1], 'url':data[2], 'tags':tags});
-  //   }
-  // });
   //
   //   idx.foreach(function (idx_str) {
   //     articles.forEach(function(article_str) {
