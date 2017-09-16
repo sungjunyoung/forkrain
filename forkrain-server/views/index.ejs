@@ -27,25 +27,77 @@
 </head>
 <body>
 <script>
-    var test = <%- isLogin %>
+    var user_id = '<%= userId %>'
+    console.log(user_id)
 
-    console.log(test);
+    function clickFork(changeThis, idx) {
+        $.get('/apis/is_like?' + 'user_id=' + user_id + '&idx=' + idx,
+            function (data, status) {
+                console.log(data.result);
+                if (!data.result) {
+                    $(changeThis).css({
+                        "background": "url(/images/after_fork.png)",
+                        "background-size": "contain",
+                        "background-position": "center center"
+                    });
+                    $.get('/apis/insert?' + 'user_id=' + user_id + '&idx=' + idx,
+                        function (data, status) {
+                            console.log(data);
+                        })
+                } else {
+                    $(changeThis).css({
+                        "background": "url(/images/before_fork.png)",
+                        "background-size": "contain",
+                        "background-position": "center center"
+                    });
+                    $.get('/apis/delete?' + 'user_id=' + user_id + '&idx=' + idx,
+                        function (data, status) {
+                            console.log(data);
+                        })
+                }
+            })
+    }
+
+    $(document).ready(function () {
+        $('#fullpage').fullpage();
+
+        // 각각 히든을 다 돌면서
+        // 히든에 포함된
+
+        $('.hidden').each(function (index, value) {
+            var idx = $(this).text();
+            var changeThis = $(this);
+            $.get('/apis/is_like?' + 'user_id=' + user_id + '&idx=' + idx,
+                function (data, status) {
+                    console.log(data.result);
+                    if (data.result) {
+                        changeThis.closest('.fork').css({
+                            "background": "url(/images/after_fork.png)",
+                            "background-size": "contain",
+                            "background-position": "center center"
+                        });
+                    }
+                })
+        })
+
+    });
 
 </script>
-
 <div id="header_bg"></div>
 <div id="header">
-    <a href=""><div id="logo"></div></a>
+    <a href="">
+        <div id="logo"></div>
+    </a>
     <div id="search">
         <input type="text" id="search_input" placeholder="개발 언어, 오류내용, 태그 등 으로 검색해보세요!"/>
         <i id="search_button" class="material-icons">search</i>
     </div>
     <% if(isLogin) { %>
-        <a id="right_top_mypage_btn" href="/users/<%= userId %>">
-            <img id="ctl00_XXX" src="<%= avatarUrl %>" style="border: 0; max-width:100%; max-height:100%;" />
-        </a>
+    <a id="right_top_mypage_btn" href="/users/<%= userId %>">
+        <img id="ctl00_XXX" src="<%= avatarUrl %>" style="border: 0; max-width:100%; max-height:100%;"/>
+    </a>
     <% } else { %>
-        <a id="right_top_btn" data-toggle="modal" data-target="#myModal">LOGIN</a>
+    <a id="right_top_btn" data-toggle="modal" data-target="#myModal">LOGIN</a>
     <% } %>
 </div>
 
@@ -74,7 +126,14 @@
                 <div class="image_wrapper">
                     <div class="url_image" style="background: url('<%= data[key].image %>')"></div>
                     <div class="over_image">
-                        <div class="fork"></div>
+
+                        <% if(isLogin) { %>
+                        <div class="fork" onclick="clickFork(this,<%= data[key].idx %>)">
+                            <input class="hidden_idx_<%= data[key].idx %>" value="false" type="hidden"/>
+                            <div class="hidden" style="visibility: hidden;"><%= data[key].idx %></div>
+                        </div>
+                        <% } %>
+
                         <div class="sec_title"><%= data[key].title %></div>
                     </div>
                 </div>
@@ -82,7 +141,7 @@
                 <div class="contents"><%= data[key].contents.substr(0, 100) %>...</div>
                 <div class="tags">
                     <% for (var tag in data[key].tags) { %>
-                    <a class="tag"  style="color: white">#<%= data[key].tags[tag] %></a>
+                    <a class="tag" style="color: white">#<%= data[key].tags[tag] %></a>
                     <% } %>
                 </div>
                 <div class="url"><b>URL : </b> <%= data[key].url %></div>

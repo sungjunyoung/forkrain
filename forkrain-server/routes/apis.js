@@ -48,8 +48,8 @@ router.get('/data-fetch', function (req, res, next) {
 
 router.get('/insert', function (req, res, next) {
     var pin = new Pin({
-        user_id: req.params.user_id,
-        idx: req.params.idx
+        user_id: req.query.user_id,
+        idx: req.query.idx
     });
 
     pin.save(function (err, doc) {
@@ -59,8 +59,8 @@ router.get('/insert', function (req, res, next) {
 });
 
 router.get('/delete', function (req, res, next) {
-    var user_id = req.params.user_id;
-    var idx = req.params.idx;
+    var user_id = req.query.user_id;
+    var idx = req.query.idx;
 
     Pin.deleteOne({user_id: user_id, idx: idx}, function (err, doc) {
         if (err) console.log(err);
@@ -68,17 +68,26 @@ router.get('/delete', function (req, res, next) {
     });
 });
 
-router.get('/isLike', function (req, res, next) {
-  var user_id = req.params.user_id;
-  var idx = req.params.idx;
+router.get('/is_like', function (req, res, next) {
+    var user_id = req.query.user_id;
+    var idx = req.query.idx;
 
-  Pin.find({user_id: user_id, idx : idx}, function (err, docs) {
-    if(docs==null) {
-      return false;
-    } else {
-      return true;
-    }
-  })
-})
+    console.log(user_id);
+    // console.log(idx);
+
+    Pin.find({user_id: user_id, idx: idx}, function (err, docs) {
+        console.log(docs);
+        if (docs.length == 0) {
+            res.json({result: false})
+        } else {
+            if(user_id == undefined){
+                res.json({result: false})
+            } else {
+                res.json({result: true})
+            }
+
+        }
+    })
+});
 
 module.exports = router;

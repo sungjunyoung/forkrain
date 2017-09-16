@@ -82,7 +82,7 @@ router.get('/:users_id', function (req, res, next) {
                     imageUrl = $('img').attr('src');
                     matchingList[i].image = imageUrl;
 
-                    console.log(matchingList)
+                    console.log(matchingList);
 
                     if (counter === totalLine - 1 || totalLine == 1) {
                         res.render('user', {

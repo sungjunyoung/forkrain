@@ -110,6 +110,7 @@ body {
 }
 
 .fork {
+    z-index : 999;
     position: absolute;
     right: 5px;
     bottom: 10px;
