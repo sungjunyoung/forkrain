@@ -9,7 +9,9 @@ router.get('/search', function (req, res, next) {
   var articleArray = text.split(/\n+/);
   var articles = [];
   var keyword = req.query.keyword;
+  var lineCount = 0;
   var matchingList = [];
+  var totalLine = articleArray.length;
 
   /*STEP 1 : listing the articles formatted JSON*/
   articleArray.forEach(function(str) {
@@ -31,6 +33,11 @@ router.get('/search', function (req, res, next) {
       tags.forEach(function(tags_str) {
         if(tags_str==keyword) matchingList.push(str);
       })
+    }
+
+    lineCount += 1;
+    if(lineCount == totalLine-1){
+        res.render('index', {data: matchingList});
     }
   });
 })
