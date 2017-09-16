@@ -72,4 +72,17 @@ router.delete('/delete', function (req, res, next) {
     });
 });
 
+router.get('/isLike', function (req, res, next) {
+  var user_id = req.params.user_id;
+  var idx = req.params.idx;
+
+  Pin.find({user_id: user_id, idx : idx}, function (err, docs) {
+    if(docs==null) {
+      return false;
+    } else {
+      return true;
+    }
+  })
+})
+
 module.exports = router;
