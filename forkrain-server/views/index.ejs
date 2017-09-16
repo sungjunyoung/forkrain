@@ -27,14 +27,15 @@
 </head>
 <body>
 <script>
-    var test = <%- JSON.stringify(userId) %>;
-    console.log(test);
+    var test = <%- isLogin %>
+
+        console.log(test);
 
 </script>
 
 <div id="header_bg"></div>
 <div id="header">
-    <div id="logo"></div>
+    <a href=""><div id="logo"></div></a>
     <div id="search">
         <input type="text" id="search_input"/>
         <i id="search_button" class="material-icons">search</i>
@@ -73,13 +74,12 @@
                     <div class="over_image">
                         <div class="sec_title"><%= data[key].title %></div>
                     </div>
-
                 </div>
-                <a class="title"><%= data[key].title %></a>
+                <h4><a href="<%= data[key].url %>" style="color: black"><%= data[key].title %></a></h4>
                 <div class="contents"><%= data[key].contents.substr(0, 100) %>...</div>
                 <div class="tags">
                     <% for (var tag in data[key].tags) { %>
-                    #<%= data[key].tags[tag] %>
+                    <a href="/apis/search?keyword=<%= data[key].tags[tag] %> " style="color: black">#<%= data[key].tags[tag] %></a>
                     <% } %>
                 </div>
                 <div class="url"><b>URL : </b> <%= data[key].url %></div>
