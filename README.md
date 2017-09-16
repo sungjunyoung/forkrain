@@ -5,6 +5,7 @@
 ## 소개
 ForkRain은 여러 개발자들이 자신이 찾은 url을 저장 및 공유하고,
 다른 개발자가 올린 url를 포크하며 자료를 수집하는 서비스 입니다.
+url 을 게시하시면, 다음을 숙지하시고 pull-request 를 날려주세요!
 
 ## 사용법
 #### url을 저장, 공유 하려면
@@ -22,16 +23,22 @@ ForkRain은 여러 개발자들이 자신이 찾은 url을 저장 및 공유하�
 ## 주의사항
 : 게시글을 Pull request 할때 아래 양식에 따라 작성해주세요.
 
->#### 번호 Git아이디 URL 해시태그1 ... 해시태그5
->해시태그는 5개까지 작성 가능합니다.
+#### 번호 Git아이디 URL 해시태그1 ... 해시태그5
 
-><예제>
->>1 seunjunyoung https://naver.com 네이버 홈 굿
 
->>2 byulkim https://github.com 깃허브 개발 개발자 아톰 몽고
+<예제>
+```
+3 seunjunyoung https://naver.com 네이버 홈 굿
+2 byulkim https://github.com 깃허브 개발 개발자 아톰 몽고
+1 doyeonlee https://www.android.com 안드로이드 개발 개발자 어플리케이션
+```
 
->>3 doyeonlee https://www.android.com 안드로이드 개발 개발자 어플리케이션
+> /forkrain-server/please-edit-me.txt 파일을 사용하여 url 게시가 가능합니다!  
+> **해시태그는 5개까지 작성 가능합니다.**  
+> 내림차순으로 정렬되 있으며 문서의 가장 위에 추가합니다.  
+> 각각  index, githubid, url, [tags] 입니다.  
+> 어뷰징은 즉시 reject 됩니다!
 
-## 좋은점
+## ForkRain 을 사용해보세요!!
 * 원하는 자료의 수집과 공유가 가능합니다.
-* ForkRain 오픈소스의 contributor가 되실 수 있습니다.
+* 당신도 오픈소스 contributor가 될 수 있습니다 :)
