@@ -18,9 +18,47 @@ body {
 #contents {
     position: absolute;
     top: 55vh;
-    z-index: 999;
+    z-index: 998;
     color: white;
     width: 100%;
+}
+
+#scroll_down {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -200px;
+    left: 20px;
+    z-index: 999;
+    background: url('/images/scroll-down.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+}
+
+#scroll_desc {
+    font-size: 14px;
+    color : white;
+    position: absolute;
+    top: -180px;
+    left: 80px;
+    border: 1px solid white;
+    padding: 5px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+
+#from {
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    top: 40px;
+    left: 0px;
+    background: url('/images/from.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
 }
 
 #app_title {
