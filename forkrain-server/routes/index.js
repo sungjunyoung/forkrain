@@ -3,7 +3,6 @@ var router = express.Router();
 var fs = require('fs');
 var request = require('request');
 var cheerio = require('cheerio');
-var session = require('express-session')
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -12,7 +11,8 @@ router.get('/', function (req, res, next) {
     var articles = [];
     var lineCount = 0;
     var totalLine = articleArray.length;
-    console.log(req.session);
+    console.log(req.user);
+    // console.log(req.user.profileUrl);
 
     articleArray.forEach(function (str) {
         if (str) {

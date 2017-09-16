@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 var util = require('util');
-var session = require('express-session');
+
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var GitHubStrategy = require('passport-github2').Strategy;
@@ -10,13 +10,13 @@ var partials = require('express-partials');
 
 
 var GITHUB_CLIENT_ID = process.env.GITHUB_CLIENT_ID;
-var GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET ;
+var GITHUB_CLIENT_SECRET = process.env.GITHUB_CLIENT_SECRET;
 
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
     done(null, user);
 });
 
-passport.deserializeUser(function(obj, done) {
+passport.deserializeUser(function (obj, done) {
     done(null, obj);
 });
 
@@ -25,7 +25,7 @@ passport.use(new GitHubStrategy({
         clientSecret: GITHUB_CLIENT_SECRET,
         callbackURL: "http://127.0.0.1:3000/auth/github/callback"
     },
-    function(accessToken, refreshToken, profile, done) {
+    function (accessToken, refreshToken, profile, done) {
         // asynchronous verification, for effect...
         process.nextTick(function () {
             // To keep the example simple, the user's GitHub profile is returned to
@@ -39,10 +39,9 @@ passport.use(new GitHubStrategy({
 ));
 
 router.use(partials());
-router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 router.use(methodOverride());
-router.use(session({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
 router.use(passport.initialize());
 router.use(passport.session());
 
@@ -52,8 +51,8 @@ router.use(passport.session());
 //   the user to github.com.  After authorization, GitHub will redirect the user
 //   back to this application at /auth/github/callback
 router.get('/github',
-    passport.authenticate('github', { scope: [ 'user:email' ] }),
-    function(req, res){
+    passport.authenticate('github', {scope: ['user:email']}),
+    function (req, res) {
         // The request will be redirected to GitHub for authentication, so this
         // function will not be called.
     });
@@ -64,12 +63,12 @@ router.get('/github',
 //   login page.  Otherwise, the primary route function will be called,
 //   which, in this example, will redirect the user to the home page.
 router.get('/github/callback',
-    passport.authenticate('github', { failureRedirect: '/auth/login' }),
-    function(req, res) {
+    passport.authenticate('github', {failureRedirect: '/auth/login'}),
+    function (req, res) {
         res.redirect('/');
     });
 
-router.get('/logout', function(req, res){
+router.get('/logout', function (req, res) {
     req.logout();
     res.redirect('/auth/login');
 });
