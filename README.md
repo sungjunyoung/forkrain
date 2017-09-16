@@ -1,5 +1,6 @@
 # ForkRain
 #### 개발자들을 위한 코딩 지식 공유 및 개인화 플랫폼
+![Logo](./assets/logo.jpg)
 ---
 
 ## 소개
@@ -28,9 +29,10 @@ url 을 게시하시면, 다음을 숙지하시고 pull-request 를 날려주세
 
 <예제>
 ```
-3 seunjunyoung https://naver.com 네이버 홈 굿
-2 byulkim https://github.com 깃허브 개발 개발자 아톰 몽고
-1 doyeonlee https://www.android.com 안드로이드 개발 개발자 어플리케이션
+4 changju https://imitator.kr/Linux/1329	서버 ssg접근 에러
+3 seunjunyoung  http://egloos.zum.com/lucene/v/1386072 아파치 오픈소스  검색엔진
+2 byulkim http://arduino.org/ 아두이노  IOT 센서  연결
+1 doyeonlee https://www.edureka.co/blog/devops-tutorial 데브옵스 소프트웨어공학
 ```
 
 > /forkrain-server/please-edit-me.txt 파일을 사용하여 url 게시가 가능합니다!  
