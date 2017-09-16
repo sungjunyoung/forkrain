@@ -16,6 +16,7 @@ router.get('/:users_id', function (req, res, next) {
   var articleArray = text.split(/\n+/);
   var articles = [];
   var matchingList = [];
+  var i;
 
   /*Find the index about user_id*/
   Pin.find({user_id: user_id}, {_id:false, user_id:false}, (err, docs)=>{
