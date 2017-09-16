@@ -5,15 +5,3 @@
 15	Changju	http://recipes4dev.tistory.com/42	ListView	리스트뷰	Fragment	Adapter	안드로이드
 14	Star	http://blog.work6.kr/146	node.js	윈도우	설치 및 실행	windows
 13	doyoun	https://velopert.com/479	몽고DB	Query	find()
-12	sumin	http://pinkwink.kr/600	3d프린터	원리	종류
-11	world	http://d2.naver.com/helloworld/8237898	비트코인	블록체인
-10	mondy	http://library.gabia.com/contents/infrahosting/2257	클라우드	IaaS	PaaS	SaaS
-9	simson	http://smartincome.tistory.com/250	IOT	플랫폼	사례
-8	Kim	http://brand.hyundai.com/ko/brand/technology/adas.do	현대자동차	자율주행
-7	james	http://platum.kr/archives/56370	가상현실	미래	VR
-6	donald	http://www.samsung.com/sec/apps/bixby/	bixby	삼성	스마트폰
-5	simon	https://brunch.co.kr/@gentlepie/2	챗봇	chatbot	AI
-4	Gary	https://prezi.com/xrbfxztnynyl/presentation/	드론	prezi	활용방안
-3	GD	https://prezi.com/5svgroxrkh5q/sns/	SNS	소셜네트워크	prezi
-2	IU	http://untitledtblog.tistory.com/9	컴파일러	구조	분석	코드생성
-1	goo	https://kldp.org/node/89458	하스켈	함수
