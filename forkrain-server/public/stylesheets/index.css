@@ -38,7 +38,7 @@ body {
 
 #scroll_desc {
     font-size: 14px;
-    color : white;
+    color: white;
     position: absolute;
     top: -180px;
     left: 80px;
@@ -95,19 +95,29 @@ body {
     border-bottom: 1px solid #333333;
 }
 
-.image_wrapper{
+.image_wrapper {
     /*display: inline-block;*/
     height: 0;
 }
 
 .over_image {
-
     position: relative;
     top: 15vh;
     height: 5vh;
     width: 30vw;
     background-color: black;
     opacity: 0.9;
+}
+
+.fork {
+    position: absolute;
+    right: 5px;
+    bottom: 10px;
+    background: url('/images/before_fork.png');
+    background-size: contain;
+    width: 60px;
+    height: 60px;
+    background-position: center center;
 }
 
 .url_image {
@@ -122,7 +132,7 @@ body {
 }
 
 .sec_title {
-    color : white;
+    color: white;
     font-size: 12px;
     position: relative;
     top: -19vh;
@@ -144,11 +154,12 @@ body {
 }
 
 .tags {
-    display:inline-block;
+    display: inline-block;
     font-size: 16px;
     text-align: right;
     margin-bottom: 5px;
 }
+
 .tag {
     background-color: #1E1E1E;
     padding: 5px;
@@ -162,7 +173,7 @@ body {
 }
 
 .section_contents {
-    margin-bottom:4vh;
+    margin-bottom: 4vh;
 }
 
 #modal_title {
@@ -188,7 +199,7 @@ body {
     text-align: center;
 }
 
-#not_login{
+#not_login {
     height: 40px;
     width: 300px;
     margin-bottom: 20px;

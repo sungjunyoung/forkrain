@@ -25,10 +25,6 @@
 
 </head>
 <body>
-<script>
-    console.log( <%= data[0].contents %>)
-
-</script>
 <div id="header_bg"></div>
 <div id="header">
     <div id="logo" onclick="location.href='/'"></div>
@@ -58,6 +54,7 @@
             <div class="image_wrapper">
                 <div class="url_image" style="background: url('<%= data[0].image %>')"></div>
                 <div class="over_image">
+                    <div class="fork"></div>
                     <div class="sec_title"><%= data[0].title %></div>
                 </div>
             </div>
@@ -65,7 +62,7 @@
             <div class="contents"><%= data[0].contents %>...</div>
             <div class="tags">
                 <% for (var tag in data[0].tags) { %>
-                <a href="/apis/search?keyword=<%= data[0].tags[tag] %> " style="color: black">#<%= data[0].tags[tag] %></a>
+                <a class="tag" style="color: white">#<%= data[0].tags[tag] %></a>
                 <% } %>
             </div>
             <div class="url"><b>URL : </b> <%= data[0].url %></div>
@@ -82,6 +79,7 @@
                 <div class="image_wrapper">
                     <div class="url_image" style="background: url('<%= data[key].image %>')"></div>
                     <div class="over_image">
+                        <div class="fork"></div>
                         <div class="sec_title"><%= data[key].title %></div>
                     </div>
                 </div>
@@ -89,7 +87,7 @@
                 <div class="contents"><%= data[key].contents %>...</div>
                 <div class="tags">
                     <% for (var tag in data[key].tags) { %>
-                    <a href="/apis/search?keyword=<%= data[key].tags[tag] %> " style="color: black">#<%= data[key].tags[tag] %></a>
+                    <a class="tag" style="color: black">#<%= data[key].tags[tag] %></a>
                     <% } %>
                 </div>
                 <div class="url"><b>URL : </b> <%= data[key].url %></div>

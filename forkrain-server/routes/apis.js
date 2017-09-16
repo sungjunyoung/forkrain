@@ -46,13 +46,11 @@ router.get('/data-fetch', function (req, res, next) {
     res.json({result: 'this is OK'})
 });
 
-router.post('/insert', function (req, res, next) {
-    /*TEST CODE*/
+router.get('/insert', function (req, res, next) {
     var pin = new Pin({
-        user_id: "sungjunyoung",
-        idx: 1
+        user_id: req.params.user_id,
+        idx: req.params.idx
     });
-    /***********/
 
     pin.save(function (err, doc) {
         if (err) console.log(err);
@@ -60,13 +58,11 @@ router.post('/insert', function (req, res, next) {
     });
 });
 
-router.delete('/delete', function (req, res, next) {
-    /*TEST data*/
-    user_id = "API TEST";
-    idx = 200;
-    /***********/
+router.get('/delete', function (req, res, next) {
+    var user_id = req.params.user_id;
+    var idx = req.params.idx;
 
-    Pin.deleteOne({user_id: user_id}, function (err, doc) {
+    Pin.deleteOne({user_id: user_id, idx: idx}, function (err, doc) {
         if (err) console.log(err);
         else console.log("remove DB");
     });
