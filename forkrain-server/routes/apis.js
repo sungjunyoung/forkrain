@@ -31,7 +31,7 @@ router.get('/search', function (req, res, next) {
     if(str) {
       var tags = str.tags;
       tags.forEach(function(tags_str) {
-        if(tags_str==keyword) matchingList.push(str);
+        if(tags_str == keyword) matchingList.push(str);
       })
     }
 
@@ -40,7 +40,11 @@ router.get('/search', function (req, res, next) {
         res.render('index', {data: matchingList});
     }
   });
-})
+});
+
+router.get('/data-fetch', function(req,res, next){
+  res.json({result: 'this is OK'})
+});
 
 router.post('/insert', function (req, res, next) {
   /*TEST CODE*/

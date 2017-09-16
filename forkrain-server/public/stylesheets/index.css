@@ -96,13 +96,15 @@ body {
 }
 
 .url_image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     float: left;
     height: 21vh;
     width: 40vw;
     border: 1px black solid;
     margin-right: 5px;
 }
-
 a {
     color: #00B7FF;
 }
