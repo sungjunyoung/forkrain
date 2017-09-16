@@ -1,13 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+<head>
+    <title>Forkrain</title>
+    <link rel='stylesheet' href='/stylesheets/common.css'/>
+    <link rel='stylesheet' href='/stylesheets/header.css'/>
+    <link rel='stylesheet' href='/stylesheets/index.css'/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+</head>
+<body>
+<div id="background"></div>
+<div id="header">
+    <div id="logo"></div>
+    <div id="search">
+        <input type="text" id="search_input"/>
+        <i id="search_button" class="material-icons">search</i>
+    </div>
+    <a id="right_top_btn">LOGIN</a>
+</div>
 
-    <a href="/auth/logout">로그아웃</a>
-  </body>
+<div id="contents">
+
+</div>
+<!--<h1><%= title %></h1>-->
+<!--<p>Welcome to <%= title %></p>-->
+
+<!--<a href="/auth/logout">로그아웃</a>-->
+</body>
 </html>

@@ -1,0 +1,21 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 200;
+    margin: 0;
+}
+
+#background {
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/images/background.jpg');
+    background-size: cover;
+    background-position: top center;
+}
+
+
+a {
+    color: #00B7FF;
+}
