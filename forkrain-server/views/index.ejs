@@ -2,14 +2,26 @@
 <html>
 <head>
     <title>Forkrain</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
     <link rel='stylesheet' href='/stylesheets/common.css'/>
     <link rel='stylesheet' href='/stylesheets/header.css'/>
     <link rel='stylesheet' href='/stylesheets/index.css'/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
+    <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <link href="/stylesheets/jquery.fullPage.css" rel="stylesheet">
+    <script src="/javascripts/jquery.fullPage.min.js"></script>
+    <script src="/javascripts/index.js"></script>
+
+
 </head>
 <body>
-<div id="background"></div>
+
+<div id="header_bg"></div>
 <div id="header">
     <div id="logo"></div>
     <div id="search">
@@ -19,8 +31,24 @@
     <a id="right_top_btn">LOGIN</a>
 </div>
 
-<div id="contents">
 
+<div id="fullpage">
+    <div class="section">
+        <div id="background"></div>
+        <div id="contents">
+            <div id="scroll_down"></div>
+            <div id="scroll_desc">스크롤을 내려 다른 개발자의<br/> 포크를 확인하세요</div>
+            <div id="from"></div>
+
+            <div id="app_title">FORKRAIN</div>
+            <div id="divider">ㅡ</div>
+            <div class="desc">개발자를 위한 코딩 지식 공유 플랫폼 FORKRAIN</div>
+            <div class="desc">비처럼 쏟아지는 정보들 찍어내서 저장하고 공유해보세요!</div>
+        </div>
+    </div>
+    <div class="section">
+        test
+    </div>
 </div>
 </body>
 </html>
