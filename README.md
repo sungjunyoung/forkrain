@@ -1,5 +1,6 @@
 # ForkRain
 #### 개발자들을 위한 코딩 지식 공유 및 개인화 플랫폼
+![Logo](./assets/logo.jpg)
 ---
 
 ## 소개
