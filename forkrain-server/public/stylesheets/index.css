@@ -15,6 +15,35 @@ body {
     background-position: top center;
 }
 
+#contents {
+    position: absolute;
+    top: 55vh;
+    z-index: 999;
+    color: white;
+    width: 100%;
+}
+
+#app_title {
+    font-weight: 600;
+    text-align: right;
+    color: white;
+    margin: 0 45px 0 0;
+    font-size: 40px;
+}
+
+#divider {
+    /*border: 1px solid white;*/
+    text-align: right;
+    font-size: 40px;
+    margin: -10px 45px -10px 0;
+}
+
+.desc {
+    margin: 0 45px 10px 0;
+    text-align: right;
+    color: white;
+    font-size: 16px;
+}
 
 a {
     color: #00B7FF;
