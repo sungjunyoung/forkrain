@@ -49,8 +49,8 @@ router.get('/data-fetch', function (req, res, next) {
 router.post('/insert', function (req, res, next) {
     /*TEST CODE*/
     var pin = new Pin({
-        user_id: "API TEST",
-        idx: 200
+        user_id: "sungjunyoung",
+        idx: 1
     });
     /***********/
 

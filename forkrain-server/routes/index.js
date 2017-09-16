@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
     var isLogin = false;
     var userId = '';
     var avatarUrl = '';
-    if(req.user){
+    if (req.user) {
         isLogin = true;
         userId = req.user.username;
         avatarUrl = req.user._json.avatar_url;
@@ -38,32 +38,41 @@ router.get('/', function (req, res, next) {
                 var counter = 0;
                 articles.forEach(function (obj, i) {
                     // 비동기적 이미지, 제목, 내용 크롤링
-                    request(obj.url, function(err, result, body){
+                    request(obj.url, function (err, result, body) {
                         counter += 1;
                         const $ = cheerio.load(body);
                         // 1. 제목
-                        var title = $('h1').text();
-                        if(title.length == 0){
+                        var title = '';
+                        title = $('h1').text();
+                        if (title.length == 0) {
                             title = $('h2').text();
                         }
-                        if(title.length == 0){
+                        if (title.length == 0) {
                             title = $('h3').text();
                         }
                         articles[i].title = title;
 
                         // 2. 내용
-                        var contents = $('p').text();
+                        var contents = '';
+                        contents = $('p').text().substr(0,100);
                         articles[i].contents = contents;
 
                         // 3. 이미지
-                        var imageUrl = $('img').attr('src');
+                        var imageUrl = '';
+                        imageUrl = $('img').attr('src');
                         articles[i].image = imageUrl;
 
+                        console.log(articles);
+
                         if (counter === totalLine - 1) {
-                            res.render('index', {data: articles, isLogin: isLogin, userId: userId, avatarUrl: avatarUrl});
+                            res.render('index', {
+                                data: articles,
+                                isLogin: isLogin,
+                                userId: userId,
+                                avatarUrl: avatarUrl
+                            });
                         }
                     });
-
 
 
                 });

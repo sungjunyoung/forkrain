@@ -32,6 +32,7 @@ router.get('/:users_id', function (req, res, next) {
         } else {
             length = docs.length;
             for (i = 0; i < length; i++) boardNo.push(docs[i].idx);
+            console.log(boardNo);
 
             /*STEP 1 : listing the articles into formatted JSON*/
             for (j = 0; j < articleArray.length; j++) {
@@ -43,9 +44,13 @@ router.get('/:users_id', function (req, res, next) {
             /*STEP 2 : Matching Keyword with articles*/
             for (var i = 0; i < length; i++) {
                 for (var j = 0; j < articles.length; j++) {
-                    if (articles[j].idx == boardNo[i]) matchingList.push(articles);
+                    if (articles[j].idx == boardNo[i]) {
+                        matchingList.push(articles[j]);
+                    }
                 }
             }
+
+            console.log(matchingList)
             res.render('user', {data: matchingList, isLogin: isLogin, userId: userId});
         }
     })
