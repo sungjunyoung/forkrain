@@ -26,6 +26,8 @@ router.get('/:users_id', function (req, res, next) {
         isLogin = true;
         avatarUrl = req.user._json.avatar_url;
         userId = req.user.username;
+    } else {
+        res.redirect('/');
     }
 
     /*Find the index about user_id*/
