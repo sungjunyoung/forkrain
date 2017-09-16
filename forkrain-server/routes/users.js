@@ -9,21 +9,39 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/:users_id', function (req, res, next) {
+  var user_id = req.params.users_id;
+  var length;
+  var boardNo = [];
   // var text = fs.readFileSync('please-edit-me.txt','utf8');
   // var articleArray = text.split(/\n+/);
   // var articles = [];
-  // var user_id = req.params.users_id;
   // var lineCount = 0;
   // var matchingList = [];
   // var totalLine = articleArray.length;
   // var idx=[];
   //
-  // Pin.find({user_id: user_id}, {_id:false, user_id:false}, (err, docs)=>{
-  //   /*Find the index about user_id*/
-  //   console.log(JSON.stringify(docs));
-  // })
 
-  res.send("end");
+  /*Find the index about user_id*/
+  Pin.find({user_id: user_id}, {_id:false, user_id:false}, (err, docs)=>{
+    if(docs==null) {
+      console.log(err);
+    } else {
+      length = docs.length;
+      for(var i=0; i<length; i++) boardNo.push(docs[i].idx);
+    }
+
+    console.log(boardNo);
+    // length = docs.length;
+    // docs.forEach(function (str) {
+    //   console.log(str);
+    // })
+    // console.log(length+"+"+JSON.stringify(docs.user_id));
+    // for(var i=0; i<length; i++) console.log(docs[i].user_id);
+  })
+
+  res.send("test");
+
+  //res.send("end");
   //
 
   // /*STEP 1 : listing the articles into formatted JSON*/
