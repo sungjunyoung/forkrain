@@ -22,7 +22,7 @@ ForkRain은 여러 개발자들이 자신이 찾은 url을 저장 및 공유하�
 ## 주의사항
 : 게시글을 Pull request 할때 아래 양식에 따라 작성해주세요.
 
->####번호 Git아이디 URL 해시태그1 ... 해시태그5
+>#### 번호 Git아이디 URL 해시태그1 ... 해시태그5
 >해시태그는 5개까지 작성 가능합니다.
 
 ><예제>
@@ -30,6 +30,6 @@ ForkRain은 여러 개발자들이 자신이 찾은 url을 저장 및 공유하�
 >>2 byulkim  https://github.com 깃허브 개발 개발자 아톰 몽고
 >>3 doyeonlee https://www.android.com 안드로이드 개발 개발자 어플리케이션
 
-## 이점
+## 좋은점
 * 원하는 자료의 수집과 공유가 가능합니다.
 * ForkRain 오픈소스의 contributor가 되실 수 있습니다.
