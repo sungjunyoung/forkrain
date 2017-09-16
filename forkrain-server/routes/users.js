@@ -12,41 +12,44 @@ router.get('/:users_id', function (req, res, next) {
   var user_id = req.params.users_id;
   var length;
   var boardNo = [];
-
-  var text = fs.readFileSync('please-edit-me.txt','utf8');
-  var articleArray = text.split(/\n+/);
-  var articles = [];
-  var lineCount = 0;
-  var totalLine = articleArray.length;
-
-  // var matchingList = [];
-  // var idx=[];
-  //
-
+  var i;
   /*Find the index about user_id*/
   Pin.find({user_id: user_id}, {_id:false, user_id:false}, (err, docs)=>{
     if(docs==null) {
       console.log(err);
     } else {
       length = docs.length;
-      for(var i=0; i<length; i++) boardNo.push(docs[i].idx);
+      for(i=0; i<length; i++) boardNo.push(docs[i].idx);
     }
   })
 
-  /*STEP 1 : listing the articles into formatted JSON*/
-  articleArray.forEach(function(str) {
-    if(str) {
-      var data = str.split(/\s+/);
-      var tags = [];
-      i=3;
-      while(data[i]) {
-        tags.push(data[i]);
-        i++;
-      }
-      articles.push({'idx':data[0], 'user_id':data[1], 'url':data[2], 'tags':tags});
-    }
-  });
-
+  res.send(JSON.stringify(boardNo));
+  // var text = fs.readFileSync('please-edit-me.txt','utf8');
+  // var articleArray = text.split(/\n+/);
+  // var articles = [];
+  // var lineCount = 0;
+  // var totalLine = articleArray.length;
+  // var matchingList = [];
+  //
+  //
+  // /*STEP 1 : listing the articles into formatted JSON*/
+  // for(var i=0; i < articleArray.length; i++) {
+  //   var data = articleArray[i].split(/\s+/);
+  //   var tags = [];
+  //   for(var j=3; data[j]; j++) tags.push(data[j]);
+  //   articles.push({'idx':data[0], 'user_id':data[1], 'url':data[2], 'tags':tags});
+  // }
+  //
+  // /*STEP 2 : Matching Keyword with articles*/
+  // for(var i=0; i<length; i++) {
+  //   console.log("article["+j+"] : ");
+  //   for(var j=0; j < articles.length; j++) {
+  //     console.log("article["+j+"] : "+JSON.stringify(article[j]));
+  //     if(articles[j] == boardNo[i]) matchingList.push(articles);
+  //   }
+  // }
+  //
+  // console.log(JSON.stringify(matchingList));
   res.send("test");
 
   //
