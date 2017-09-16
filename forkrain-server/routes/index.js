@@ -6,7 +6,7 @@ router.get('/', function (req, res, next) {
   var text = fs.readFileSync('please-edit-me.txt','utf8');
   var articleArray = text.split(/\n+/);
   var articles = [];
-  var lineCount = 0
+  var lineCount = 0;
   var totalLine = articleArray.length;
 
   articleArray.forEach(function(str) {
@@ -21,7 +21,7 @@ router.get('/', function (req, res, next) {
       articles.push({'idx':data[0], 'user_id':data[1], 'url':data[2], 'tags':tags});
       lineCount += 1;
 
-      if(lineCount == totalLine-1){
+      if(lineCount === totalLine-1){
           res.render('index', {data: articles});
       }
     }
