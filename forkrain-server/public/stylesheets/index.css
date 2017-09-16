@@ -91,7 +91,7 @@ body {
 
 .card {
     height: 22vh;
-    margin: 10px 20px 10px 20px;
+    padding: 10px 20px 10px 20px;
     border-bottom: 1px solid #333333;
 }
 
@@ -100,10 +100,22 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     float: left;
-    height: 21vh;
+    height: 20vh;
     width: 40vw;
     border: 1px black solid;
     margin-right: 5px;
+}
+
+.title {
+    float: left;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 4px 4px 4px 4px;
+}
+
+
+.section_contents {
+    margin-top: 18vh;
 }
 a {
     color: #00B7FF;

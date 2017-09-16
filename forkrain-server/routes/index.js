@@ -49,7 +49,6 @@ router.get('/', function (req, res, next) {
                         var imageUrl = $('img').attr('src');
                         articles[i].image = imageUrl;
 
-                        console.log(counter + " " + totalLine);
                         if (counter === totalLine - 1) {
                             res.render('index', {data: articles});
                         }
