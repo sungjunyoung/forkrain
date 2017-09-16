@@ -2,7 +2,8 @@
 <html>
 <head>
     <title>Forkrain</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 
     <link rel='stylesheet' href='/stylesheets/common.css'/>
     <link rel='stylesheet' href='/stylesheets/header.css'/>
@@ -21,8 +22,8 @@
 </head>
 <body>
 <script>
-var test =<%-JSON.stringify(data)%>
-console.log(test);
+    var test =<%- JSON.stringify(data) %>
+        console.log(test);
 </script>
 
 <div id="header_bg"></div>
@@ -51,7 +52,24 @@ console.log(test);
         </div>
     </div>
     <div class="section">
-        test
+        <% var i = 0; %>
+        <% for (var key in data) { %>
+        <!--여기가 컨텐츠-->
+
+
+            <h3><%= data[key].url %></h3>
+            <h3><%= data[key].user_id %></h3>
+
+        <% i++ %>
+        <% if (i % 3 == 0) { %>
+            </div>
+            <% if(i != data.length) { %>
+                <div class="section">
+            <% } else { %>
+                <div>
+            <% } %>
+         <% } %>
+        <% } %>
     </div>
 </div>
 </body>
