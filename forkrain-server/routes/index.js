@@ -13,9 +13,11 @@ router.get('/', function (req, res, next) {
     var totalLine = articleArray.length;
     console.log(req.user);
     var isLogin = false;
+    var userId = '';
     if(req.user){
         isLogin = true;
-        var userId = req.user.login;
+        console.log(req.user.username);
+        userId = req.user.username;
     }
 
     articleArray.forEach(function (str) {

@@ -26,9 +26,8 @@
 </head>
 <body>
 <script>
-    var test = <%- isLogin %>
-
-        console.log(test);
+    var test = <%- JSON.stringify(userId) %>;
+    console.log(test);
 
 </script>
 
