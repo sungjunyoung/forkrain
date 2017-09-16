@@ -1,0 +1,28 @@
+#footer {
+    width: 100%;
+    position: fixed;
+    height: 100px;
+    background-color: #1E1E1E;
+    bottom: 0;
+    left: 0;
+    padding: 20px;
+}
+
+#footer_image {
+    text-align: center;
+    width: 100vw;
+    height: 60px;
+    background: url("/images/footer.png");
+    background-position: center;
+    background-repeat:no-repeat;
+    background-size: contain;
+    margin:auto;
+}
+#footer_red {
+    position: fixed;
+    left: 0;
+    bottom: 100px;
+    width: 100vw;
+    height: 5px;
+    background-color: #ED1C24;
+}

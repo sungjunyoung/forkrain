@@ -11,7 +11,6 @@ router.get('/', function (req, res, next) {
     var articles = [];
     var lineCount = 0;
     var totalLine = articleArray.length;
-    console.log(req.user);
     var isLogin = false;
     var userId = '';
     if(req.user){
