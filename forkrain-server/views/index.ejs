@@ -65,9 +65,15 @@
                     <div class="over_image">
                         <div class="sec_title"><%= data[key].title %></div>
                     </div>
+
                 </div>
-                <div class="title"><%= data[key].title %></div>
-                <div class="contents"><%= data[key].contents.substr(0, 80) %>...</div>
+                <a class="title"><%= data[key].title %></a>
+                <div class="contents"><%= data[key].contents.substr(0, 100) %>...</div>
+                <div class="tags">
+                <% for (var tag in data[key].tags) { %>
+                    #<%= data[key].tags[tag] %>
+                <% }%>
+                </div>
                 <div class="url"><b>URL : </b> <%= data[key].url %></div>
             </div>
             <% i++ %>
