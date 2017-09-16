@@ -34,7 +34,7 @@
 
 <div id="header_bg"></div>
 <div id="header">
-    <div id="logo"></div>
+    <a href=""><div id="logo"></div></a>
     <div id="search">
         <input type="text" id="search_input"/>
         <i id="search_button" class="material-icons">search</i>
@@ -74,7 +74,7 @@
                         <div class="sec_title"><%= data[key].title %></div>
                     </div>
                 </div>
-                <a href="<%= data[key].url %>" style="color: black"><%= data[key].title %></a>
+                <h4><a href="<%= data[key].url %>" style="color: black"><%= data[key].title %></a></h4>
                 <div class="contents"><%= data[key].contents.substr(0, 100) %>...</div>
                 <div class="tags">
                     <% for (var tag in data[key].tags) { %>
