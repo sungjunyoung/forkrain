@@ -57,14 +57,13 @@
         <div class="hot_reco">HOT RECOMMEND</div>
         <% for (var key in data) { %>
         <!--여기가 컨텐츠 1/3 -->
-
             <div class="card">
                 <div class="url_image"></div>
                 <div><%= data[key].url %></div>
                 <div><%= data[key].user_id %></div>
             </div>
-            <% i++ %>
-            <% if (i % 3 == 0) { %>
+        <% i++ %>
+        <% if (i % 3 == 0) { %>
             </div>
             <% if(i != data.length) { %>
                 <div class="section">

@@ -90,14 +90,14 @@ body {
 }
 
 .card {
-    height: 20vh;
+    height: 22vh;
     margin: 10px 20px 10px 20px;
     border-bottom: 1px solid #333333;
 }
 
 .url_image {
     float: left;
-    height: 19vh;
+    height: 21vh;
     width: 40vw;
     border: 1px black solid;
     margin-right: 5px;
