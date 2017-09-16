@@ -58,24 +58,27 @@
             <% var i = 0; %>
             <div class="hot_reco">HOT RECOMMEND</div>
             <% for (var key in data) { %>
-            <!--여기가 컨텐츠 1/3 -->
-            <div class="card">
-                <div class="url_image" style="background: url('<%= data[key].image %>')"></div>
-                <div class="title"><%= data[key].title %></div>
-                <div class="divider"></div>
-                <div><%= data[key].url %></div>
-                <div><%= data[key].user_id %></div>
-            </div>
-            <% i++ %>
-            <% if (i % 3 == 0) { %>
-        </div>
-        <% if(i != data.length) { %>
-        <div class="section">
-            <% } else { %>
-            <div>
+                <!--여기가 컨텐츠 1/3 -->
+                <div class="card">
+                    <div class="url_image" style="background: url('<%= data[key].image %>')"></div>
+                    <div class="title"><%= data[key].title %></div>
+                    <br>
+                    <div class="divider">ㅡ</div>
+                    <div class="contents"><%= data[key].contents.substr(0, 100) %></div>
+                    <div class="url"><%= data[key].url %></div>
+                    <div class="user_id"><%= data[key].user_id %></div>
+                </div>
+                <% i++ %>
+                <% if (i % 3 == 0) { %>
+                    </div>
+                    <% if(i != data.length) { %>
+                        <div class="section">
+                    <% } else { %>
+                        <div>
+                    <% } %>
                 <% } %>
-                <% } %>
-                <% } %>
+            <% } %>
+
             </div>
         </div>
     </div>

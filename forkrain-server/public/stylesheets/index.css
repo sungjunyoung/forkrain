@@ -113,6 +113,15 @@ body {
     margin: 4px 4px 4px 4px;
 }
 
+.contents {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.url {
+    font-size: 12px;
+    float : left;
+}
 
 .section_contents {
     margin-top: 18vh;
