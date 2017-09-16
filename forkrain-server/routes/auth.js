@@ -42,8 +42,6 @@ router.use(partials());
 router.use(bodyParser.urlencoded({extended: true}));
 router.use(bodyParser.json());
 router.use(methodOverride());
-router.use(passport.initialize());
-router.use(passport.session());
 
 // GET /auth/github
 //   Use passport.authenticate() as route middleware to authenticate the

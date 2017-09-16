@@ -12,7 +12,11 @@ router.get('/', function (req, res, next) {
     var lineCount = 0;
     var totalLine = articleArray.length;
     console.log(req.user);
-    // console.log(req.user.profileUrl);
+    var isLogin = false;
+    if(req.user){
+        isLogin = true;
+        var userId = req.user.login;
+    }
 
     articleArray.forEach(function (str) {
         if (str) {
@@ -52,7 +56,7 @@ router.get('/', function (req, res, next) {
                         articles[i].image = imageUrl;
 
                         if (counter === totalLine - 1) {
-                            res.render('index', {data: articles});
+                            res.render('index', {data: articles, isLogin: isLogin, userId: userId});
                         }
                     });
 

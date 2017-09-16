@@ -26,7 +26,8 @@
 </head>
 <body>
 <script>
-    var test =<%- JSON.stringify(data) %>
+    var test = <%- isLogin %>
+
         console.log(test);
 
 </script>
@@ -38,8 +39,11 @@
         <input type="text" id="search_input"/>
         <i id="search_button" class="material-icons">search</i>
     </div>
-    <a id="right_top_btn" data-toggle="modal" data-target="#myModal">LOGIN</a>
-    <!--<a id="right_top_btn" href="/auth/logout">LOGOUT</a>-->
+    <% if(isLogin) { %>
+        <a id="right_top_btn" href="/users/<%= userId %>">MYPAGE</a>
+    <% } else { %>
+        <a id="right_top_btn" data-toggle="modal" data-target="#myModal">LOGIN</a>
+    <% } %>
 </div>
 
 
@@ -115,7 +119,7 @@
                         또는
                     </div>
                     <div id="not_login_wrapper">
-                        <button id="not_login" type="button" class="btn btn-default" data-dismiss="modal" >로그인 없이 둘러보기
+                        <button id="not_login" type="button" class="btn btn-default" data-dismiss="modal">로그인 없이 둘러보기
                     </div>
                     </button>
                 </div>
