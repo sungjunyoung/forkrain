@@ -8,6 +8,7 @@
     <link rel='stylesheet' href='/stylesheets/common.css'/>
     <link rel='stylesheet' href='/stylesheets/header.css'/>
     <link rel='stylesheet' href='/stylesheets/user.css'/>
+    <link rel='stylesheet' href='/stylesheets/footer.css'/>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -18,11 +19,13 @@
             src="https://code.jquery.com/jquery-3.2.1.min.js"
             integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
             crossorigin="anonymous"></script>
-    <script src="/javascripts/user.js"></script>
 
 
 </head>
 <body>
+<script>
+    console.log( <%- JSON.stringify(data) %>)
+</script>
 <div id="header_bg"></div>
 <div id="header">
     <div id="logo" onclick="location.href='/'"></div>
@@ -34,6 +37,40 @@
     <a id="right_top_btn" href="/auth/logout">LOGOUT</a>
     <% } %>
 </div>
+
+<div id="fullpage">
+    <div class="section">
+        <div id="background"></div>
+        <div id="contents">
+            <div id="github_avartar" style="background: url('<%= avatarUrl %>');background-size: cover;
+                    background-position: center center;
+                    background-repeat: no-repeat;"></div>
+            <div id="github_userinfo">
+                <div id="github_id"><%= userId %></div>
+            </div>
+        </div>
+
+        <!--여기가 컨텐츠 1/3 -->
+        <div class="card" style="margin-top: 10vh">
+            <div class="image_wrapper">
+                <div class="url_image" style="background: url('<%= data[0].image %>')"></div>
+                <div class="over_image">
+                    <div class="sec_title"><%= data[0].title %></div>
+                </div>
+            </div>
+            <h4><a href="<%= data[0].url %>" style="color: black"><%= data[0].title %></a></h4>
+            <div class="contents"><%= data[0].contents.substr(0, 100) %>...</div>
+            <div class="tags">
+                <% for (var tag in data[0].tags) { %>
+                <a href="/apis/search?keyword=<%= data[0].tags[tag] %> " style="color: black">#<%= data[0].tags[tag] %></a>
+                <% } %>
+            </div>
+            <div class="url"><b>URL : </b> <%= data[0].url %></div>
+        </div>
+    </div>
+
+</div>
+
 
 </body>
 </html>
