@@ -26,7 +26,7 @@
 </head>
 <body>
 <script>
-    console.log( <%- JSON.stringify(data) %>)
+    console.log( <%= data[0].contents %>)
 
 </script>
 <div id="header_bg"></div>
@@ -62,7 +62,7 @@
                 </div>
             </div>
             <h4><a href="<%= data[0].url %>" style="color: black"><%= data[0].title %></a></h4>
-            <div class="contents"><%= data[0].contents.substr(0, 100) %>...</div>
+            <div class="contents"><%= data[0].contents %>...</div>
             <div class="tags">
                 <% for (var tag in data[0].tags) { %>
                 <a href="/apis/search?keyword=<%= data[0].tags[tag] %> " style="color: black">#<%= data[0].tags[tag] %></a>
@@ -76,6 +76,7 @@
         <div class="section_contents">
             <% var i = 0; %>
             <% for (var key in data) { %>
+                <% if (key==0) continue; %>
             <!--여기가 컨텐츠 1/3 -->
             <div class="card">
                 <div class="image_wrapper">
@@ -85,7 +86,7 @@
                     </div>
                 </div>
                 <h4><a href="<%= data[key].url %>" style="color: black"><%= data[key].title %></a></h4>
-                <div class="contents"><%= data[key].contents.substr(0, 100) %>...</div>
+                <div class="contents"><%= data[key].contents %>...</div>
                 <div class="tags">
                     <% for (var tag in data[key].tags) { %>
                     <a href="/apis/search?keyword=<%= data[key].tags[tag] %> " style="color: black">#<%= data[key].tags[tag] %></a>

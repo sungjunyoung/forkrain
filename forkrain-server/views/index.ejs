@@ -29,7 +29,7 @@
 <script>
     var test = <%- isLogin %>
 
-        console.log(test);
+    console.log(test);
 
 </script>
 
@@ -37,7 +37,7 @@
 <div id="header">
     <a href=""><div id="logo"></div></a>
     <div id="search">
-        <input type="text" id="search_input"/>
+        <input type="text" id="search_input" placeholder="개발 언어, 오류내용, 태그 등 으로 검색해보세요!"/>
         <i id="search_button" class="material-icons">search</i>
     </div>
     <% if(isLogin) { %>
@@ -81,7 +81,7 @@
                 <div class="contents"><%= data[key].contents.substr(0, 100) %>...</div>
                 <div class="tags">
                     <% for (var tag in data[key].tags) { %>
-                    <a href="/apis/search?keyword=<%= data[key].tags[tag] %> " style="color: black">#<%= data[key].tags[tag] %></a>
+                    <a class="tag"  style="color: white">#<%= data[key].tags[tag] %></a>
                     <% } %>
                 </div>
                 <div class="url"><b>URL : </b> <%= data[key].url %></div>

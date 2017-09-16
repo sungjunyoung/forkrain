@@ -144,9 +144,16 @@ body {
 }
 
 .tags {
-    font-size: 12px;
+    display:inline-block;
+    font-size: 16px;
     text-align: right;
     margin-bottom: 5px;
+}
+.tag {
+    background-color: #1E1E1E;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
 }
 
 .url {

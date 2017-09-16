@@ -48,7 +48,7 @@ router.get('/:users_id', function (req, res, next) {
             /*STEP 2 : Matching Keyword with articles*/
             for (var i = 0; i < length; i++) {
                 for (var j = 0; j < articles.length; j++) {
-                    if (articles[j].idx == boardNo[i].id || articles[j].userId == boardNo[i].user_id) {
+                    if (articles[j].idx == boardNo[i].id || articles[j].user_id == boardNo[i].user_id) {
                         matchingList.push(articles[j]);
                     }
                 }
@@ -74,7 +74,7 @@ router.get('/:users_id', function (req, res, next) {
 
                     // 2. 내용
                     var contents = '';
-                    contents = $('p').text().substr(0,100);
+                    contents = $('p').text().substr(0, 100);
                     matchingList[i].contents = contents;
 
                     // 3. 이미지
@@ -82,8 +82,9 @@ router.get('/:users_id', function (req, res, next) {
                     imageUrl = $('img').attr('src');
                     matchingList[i].image = imageUrl;
 
-                    console.log(counter + " " + totalLine);
-                    if (counter === totalLine - 1 || counter === totalLine ) {
+                    console.log(matchingList)
+
+                    if (counter === totalLine - 1 || totalLine == 1) {
                         res.render('user', {
                             data: matchingList,
                             isLogin: isLogin,

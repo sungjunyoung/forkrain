@@ -3,6 +3,7 @@
     position: fixed;
     height: 100px;
     background-color: #1E1E1E;
+    opacity: 0.9;
     bottom: 0;
     left: 0;
     padding: 20px;
