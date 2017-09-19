@@ -1,5 +1,9 @@
 # ForkRain
 #### 개발자들을 위한 코딩 지식 공유 및 개인화 플랫폼
+
+- youtube : https://youtu.be/IAbN97KTDnE
+- slideshare : https://www.slideshare.net/mobile/SungJunyoung/forkrain-ppt
+
 ![Logo](./assets/logo.jpg)
 ---
 
